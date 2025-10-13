@@ -1,38 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mind Gate - Home</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mind Gate - Stress Relief & Mind Relaxation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f8ff;
+      color: #333;
+      transition: background 0.5s, color 0.5s;
+    }
+    .dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+    header {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 { font-size: 2.5rem; }
+    section { padding: 2rem; text-align: center; }
+    .btn {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #4facfe;
+      color: white;
+      margin: 0.5rem;
+      transition: transform 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover { transform: scale(1.05); }
+    .subscription {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .plan {
+      border: 2px solid #4facfe;
+      border-radius: 12px;
+      padding: 1rem;
+      width: 200px;
+      transition: 0.3s;
+    }
+    .plan:hover { background: #e0f7ff; }
+    .dark-mode .plan:hover { background: #1e1e1e; }
+    .premium {
+      display: none;
+      margin-top: 2rem;
+      padding: 1rem;
+      border: 2px dashed #4facfe;
+      border-radius: 12px;
+    }
+    footer {
+      background: #4facfe;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
 <body>
-<header>
-<h1>🌿 Mind Gate</h1>
-<p>Stress Relief & Mindfulness Platform</p>
-<nav>
-<a href="index.html">Home</a>
-<a href="meditation.html">Meditation</a>
-<a href="soundscapes.html">Soundscapes</a>
-<a href="premium.html">Premium</a>
-<a href="gallery.html">Gallery</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</nav>
-<button class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
-</header>
-<section>
-<h2>Welcome to Mind Gate</h2>
-<p>Relax your mind, reduce stress, and improve mindfulness.</p>
-<button class="btn" onclick="startMeditation()">Start Quick Meditation</button>
-</section>
-<section>
-<h2>Featured Content</h2>
-<div class="card">Guided Breathing Exercise</div>
-<div class="card">Calming Ambient Sounds</div>
-<div class="card">Premium Meditation Tracks</div>
-</section>
-<footer>© 2025 Mind Gate | Vishwesh, Aditya & Paras</footer>
-<script src="script.js"></script>
+  <header>
+    <h1>🌿 Welcome to Mind Gate 🌿</h1>
+    <p>Your personal stress relief and relaxation space</p>
+    <button class="btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </header>
+
+  <section>
+    <h2>🧘 Breathing & Meditation</h2>
+    <p>Follow our guided breathing and meditation sessions to relax your mind.</p>
+    <button class="btn" onclick="startMeditation()">Start Guided Meditation</button>
+  </section>
+
+  <section>
+    <h2>🎶 Ambient Sounds</h2>
+    <p>Mix rain, wind, and calming drones to create your peaceful soundscape.</p>
+    <button class="btn">Play Rain</button>
+    <button class="btn">Play Wind</button>
+    <button class="btn">Play Calm Drone</button>
+  </section>
+
+  <section>
+    <h2>🖼️ Mindful Gallery</h2>
+    <p>Relax with calming visuals and prompts.</p>
+    <img src="https://source.unsplash.com/400x300/?nature,relax" width="300" style="border-radius:12px; margin:10px;">
+    <img src="https://source.unsplash.com/400x300/?ocean,calm" width="300" style="border-radius:12px; margin:10px;">
+  </section>
+
+  <section>
+    <h2>💳 Subscription Plans</h2>
+    <p>Choose a plan to unlock premium mindfulness content.</p>
+    <div class="subscription">
+      <div class="plan">
+        <h3>1 Month</h3>
+        <p>₹99</p>
+        <a class="btn" href="upi://pay?pa=7738606692@ybl&pn=MindGate&am=99" target="_blank" onclick="unlockPremium()">Pay via UPI</a>
+      </div>
+      <div class="plan">
+        <h3>3 Months</h3>
+        <p>₹299</p>
+        <a class="btn" href="upi://pay?pa=7738606692@ybl&pn=MindGate&am=299" target="_blank" onclick="unlockPremium()">Pay via UPI</a>
+      </div>
+      <div class="plan">
+        <h3>1 Year</h3>
+        <p>₹799</p>
+        <a class="btn" href="upi://pay?pa=7738606692@ybl&pn=MindGate&am=799" target="_blank" onclick="unlockPremium()">Pay via UPI</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="premium" id="premiumContent">
+    <h2>🌟 Premium Mindfulness Content</h2>
+    <p>Thank you for subscribing! Enjoy exclusive meditation tracks, premium guided sessions, and advanced mindful exercises.</p>
+    <ul>
+      <li>Extended guided meditation audio</li>
+      <li>Exclusive ambient soundscapes</li>
+      <li>Advanced focus timers & exercises</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>👥 About Us</h2>
+    <p>Mind Gate was founded by three passionate individuals who wanted to bring peace and mindfulness to everyone’s daily life.</p>
+    <ul style="list-style:none; padding:0;">
+      <li>🌟 Vishwesh - Vision & Experience Designer</li>
+      <li>🌟 Aditya - Developer & Innovator</li>
+      <li>🌟 Paras - Creative Content & Strategy</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Mind Gate | Built with ❤️ by Vishwesh, Aditya & Paras</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode(){
+      document.body.classList.toggle('dark-mode');
+    }
+    function startMeditation(){
+      let text = "Close your eyes... breathe in... breathe out... relax your mind...";
+      let utterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utterance);
+    }
+    function unlockPremium(){
+      alert('Thank you for your payment! Premium content unlocked.');
+      document.getElementById('premiumContent').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
